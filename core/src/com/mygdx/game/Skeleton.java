@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Skeleton extends Game {
 
-    public static final int WIDTH = 768, HEIGHT = 576;
+    public static final int WIDTH = 800, HEIGHT = 600;
 
     public SpriteBatch batch;
     public BitmapFont font;

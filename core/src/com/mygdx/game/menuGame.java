@@ -12,7 +12,6 @@ import static com.badlogic.gdx.graphics.GL20.GL_COLOR_BUFFER_BIT;
 public class menuGame implements Screen {
 
     final Skeleton game;
-
     OrthographicCamera camera;
 
     public menuGame(Skeleton game) {
@@ -33,18 +32,19 @@ public class menuGame implements Screen {
     public void render(float delta) {
 
         Gdx.gl.glClearColor(0,0, 0f, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
         game.batch.draw(new Texture(Gdx.files.internal("background.png")),0 ,0);
 
-        game.font.setColor(Color.BLACK);
+        game.font.setColor(Color.WHITE );
         game.font.draw(game.batch, "Skeleton Dance!", 50, 550);
         game.batch.end();
 
         if ( (Gdx.input.isTouched())){
-            game.setScreen((Screen) new mainGame(game));
+            game.setScreen(new mainGame(game));
             dispose();
         }
 
