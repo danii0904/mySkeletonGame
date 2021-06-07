@@ -1,7 +1,6 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -9,7 +8,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
@@ -78,8 +76,8 @@ public class mainGame extends ApplicationAdapter implements Screen {
 		skeleton = new Rectangle();
 		skeleton.x = 100;
 		skeleton.y = 100;
-		skeleton.width = 100;
-		skeleton.height = 100;
+		skeleton.width = 60;
+		skeleton.height = 60;
 
 		stateTime = 0f;
 
@@ -97,11 +95,6 @@ public class mainGame extends ApplicationAdapter implements Screen {
 
 		camera.update();
 		game.batch.setProjectionMatrix(camera.combined);
-
-		TextureRegion currentLeftFrame = walkLeftAnimation.getKeyFrame(stateTime, true);
-		TextureRegion currentRightFrame = walkRightAnimation.getKeyFrame(stateTime, true);
-		TextureRegion currentUpFrame = walkUpAnimation.getKeyFrame(stateTime, true);
-		TextureRegion currentDownFrame = walkDownAnimation.getKeyFrame(stateTime, true);
 
 		game.batch.begin();
 		game.batch.draw(new Texture(Gdx.files.internal("background.png")), 0, 0);

@@ -7,8 +7,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 
-import static com.badlogic.gdx.graphics.GL20.GL_COLOR_BUFFER_BIT;
-
 public class menuGame implements Screen {
 
     final Skeleton game;
@@ -41,6 +39,7 @@ public class menuGame implements Screen {
 
         game.font.setColor(Color.WHITE );
         game.font.draw(game.batch, "Skeleton Dance!", 50, 550);
+        game.font.draw(game.batch, "Click to start!", 50, 500);
         game.batch.end();
 
         if ( (Gdx.input.isTouched())){
